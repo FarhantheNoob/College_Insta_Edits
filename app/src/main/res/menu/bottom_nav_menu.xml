@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/feeds"
+        android:id="@+id/newsFeed"
+        android:icon="@drawable/ic_feeds"
+        app:showAsAction="withText"/>
+
+    <item android:title="@string/search"
+        android:id="@+id/Search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="withText"/>
+
+    <item android:title="@string/followers"
+        android:icon="@drawable/ic_followers"
+        android:id="@+id/followers"
+        app:showAsAction="withText"/>
+
+    <item android:title="@string/profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile"
+        app:showAsAction="withText"/>
+
+</menu>

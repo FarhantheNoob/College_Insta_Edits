@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "748422181517",
+    "firebase_url": "https://collegeinsta-f6eca.firebaseio.com",
+    "project_id": "collegeinsta-f6eca",
+    "storage_bucket": "collegeinsta-f6eca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748422181517:android:36a32b6da9bc79901ea8c4",
+        "android_client_info": {
+          "package_name": "com.example.collegeinsta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748422181517-l3256r8s9ps6bj9558qgastk4vn3j2ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOOw4KIP7vPiRQ7SeUKdaYcJCmbyGCvt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748422181517-l3256r8s9ps6bj9558qgastk4vn3j2ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
