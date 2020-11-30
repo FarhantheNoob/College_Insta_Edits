@@ -8,8 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Main_AppTheme.">
-        <activity android:name=".AllActivity" android:theme="@style/AppTheme"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".FollowersPage"></activity>
+        <activity android:name=".SearchPage" />
+        <activity android:name=".ProfilePage" />
+        <activity android:name=".NewsFeed" />
         <activity android:name=".RegisterationPage" />
         <activity android:name=".LoginPage" />
         <activity android:name=".MainActivity">

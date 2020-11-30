@@ -2,11 +2,6 @@ package com.example.collegeinsta;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,17 +9,17 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NewsFeed extends AppCompatActivity {
+public class SearchPage extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all);
+        setContentView(R.layout.activity_search_page);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.newsFeed);
+        bottomNavigationView.setSelectedItemId(R.id.Search);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -32,11 +27,11 @@ public class NewsFeed extends AppCompatActivity {
                 switch (menuItem.getItemId()){
 
                     case R.id.newsFeed:
+                        startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.Search:
-                        startActivity(new Intent(getApplicationContext(), SearchPage.class));
-                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.followers:

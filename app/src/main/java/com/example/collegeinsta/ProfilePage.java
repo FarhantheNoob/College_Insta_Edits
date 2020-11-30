@@ -2,29 +2,33 @@ package com.example.collegeinsta;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class NewsFeed extends AppCompatActivity {
+public class ProfilePage extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all);
+        setContentView(R.layout.activity_profile_page);
+
+        toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.newsFeed);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -32,6 +36,8 @@ public class NewsFeed extends AppCompatActivity {
                 switch (menuItem.getItemId()){
 
                     case R.id.newsFeed:
+                        startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.Search:
@@ -45,12 +51,30 @@ public class NewsFeed extends AppCompatActivity {
                         return true;
 
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), ProfilePage.class));
-                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.tool_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logOut:
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                return true;
+        }
+        return false;
     }
 }

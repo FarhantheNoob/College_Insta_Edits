@@ -7,13 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +40,7 @@ public class RegisterationPage extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         if (firebaseUser != null){
             Toast.makeText(this, "Registeration Successfull", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(RegisterationPage.this, AllActivity.class));
+            startActivity(new Intent(RegisterationPage.this, NewsFeed.class));
             finish();
         }else{
             Toast.makeText(this, "Registeration Failed", Toast.LENGTH_SHORT).show();
@@ -99,7 +97,7 @@ public class RegisterationPage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(RegisterationPage.this, AllActivity.class));
+                    startActivity(new Intent(RegisterationPage.this, NewsFeed.class));
                     finish();
                 }else{
                     Toast.makeText(RegisterationPage.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

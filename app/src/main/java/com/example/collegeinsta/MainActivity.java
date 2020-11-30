@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user!=null){
-            startActivity(new Intent(MainActivity.this, AllActivity.class));
+            startActivity(new Intent(MainActivity.this, NewsFeed.class));
             finish();
         }else{
             new Handler().postDelayed(new Runnable() {
