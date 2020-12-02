@@ -6,4 +6,5 @@
     <color name="colorPrimary_main">#000000</color>
     <color name="colorPrimaryDark_main">#000000</color>
     <color name="colorAccent_main">#000000</color>
+    <color name="color_transparent">@android:color/transparent</color>
 </resources>
